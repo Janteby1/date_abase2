@@ -1,0 +1,26 @@
+{% extends "dates/base.html" %}
+
+{% block content %}
+
+<h2 id="add_title">Add a Date Idea!</h2>
+
+    <form action="{% url 'dates:add' %}" method="POST">
+        {% csrf_token %}
+        
+            {% for field in add_date_form %}
+                <div id="input" class="{%if field.errors %}error{%endif%}">
+                    {{field.label_tag}}{{ field }}
+                </div>
+
+                {% if field.help_text %}
+                <p> class="help {{ field.help_text|safe }}</p>
+                {%endif%}
+
+            {% endfor %}
+            
+        <input type="submit" class="button" value="Add Date"/>
+    </form>
+
+    <a id="home" href="/dates"> Back Home </a>
+
+{% endblock content %}

@@ -1,0 +1,95 @@
+body {
+	margin-left: 15px;
+}
+
+.container {
+	margin-left: 25px;
+}
+
+#input {
+	margin-left: 25px;
+	width: 75%;
+}
+
+#home {
+	display: inline-block;
+	float: right;
+	margin: 30px;
+}
+
+#welcome {
+	font-weight: bold;
+}
+
+#add {
+	margin-bottom:15px;
+}
+
+#search {
+	margin-top:15px;
+}
+
+#add_title {
+	font-style: italic;
+}
+
+a:hover {
+	color: red;
+}
+
+#search2 {
+	display: inline-block;
+	margin: 30px;	
+}
+
+.result {
+	background-color: #cccccc;
+	padding: 5px;
+	border-radius: 15px;
+	margin-top: 15px;
+	margin-right: 15px;
+	padding-bottom: 35px;
+}
+
+.entry {
+	margin-top: 5px;
+}
+
+#place {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#notes {
+	text-align: justify;
+}
+
+#address {
+	display: inline-block;
+}
+
+#area {
+	font-style: italic;
+	display: inline-block;
+	float: right;
+
+}
+
+#price {
+	display: inline-block;
+	float: right;
+	font-style: italic;
+}
+
+#parking {
+	display: inline-block;
+	float: left;
+}
+
+
+
+
+
+
+
+

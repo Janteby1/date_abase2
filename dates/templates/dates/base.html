@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date_abase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dates/style.css' %}" />
+
+</head>
+<body>
+
+    <h1>Date-abase</h1>
+
+    <div class=container>
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+</body>
+</html>
