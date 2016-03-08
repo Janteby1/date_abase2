@@ -13,7 +13,7 @@ CATEGORIES = (
     ('ACT6', 'Activity (Boat Rental)'),
     ('ACT7', 'Activity (Boat)'),
     ('ACT8', 'Activity (Bowling)'),
-    ('ACT9', 'Activity (Bukket List)'),
+    ('ACT9', 'Activity (Bucket List)'),
     ('ACT10', 'Activity (Chill)'),
     ('ACT11', 'Activity (Experience)'),
     ('ACT12', 'Activity (Mini Golf)'),
