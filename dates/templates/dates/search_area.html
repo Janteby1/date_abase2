@@ -2,14 +2,12 @@
 
 {% block content %}
 
-<h2 id="add_title">Add a Date Idea!</h2>
-
-    <form action="{% url 'dates:add' %}" method="POST">
+    <form action="{% url 'dates:search_area' %}" method="POST">
         {% csrf_token %}
-        
-            {% for field in add_date_form %}
+
+            {% for field in search_date_form_area %}
                 <div id="input" class="{%if field.errors %}error{%endif%}">
-                    {{field.label_tag}}{{ field }}
+                    {{field.label_tag}} {{ field }}
                 </div>
 
                 {% if field.help_text %}
@@ -18,7 +16,7 @@
 
             {% endfor %}
             
-        <input type="submit" class="button" value="Add Date"/>
+        <input type="submit" class="button" value="Get Date Ideas!"/>
     </form>
 
     <a id="home" href="/dates"> Back Home </a>

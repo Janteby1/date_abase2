@@ -1,12 +1,31 @@
-{% extends "dates/base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
-    <h2 id="welcome">Welcome Page!</h2>
+	<header>
+		<h1>Welcome!</h1>
 
-    <div id="add"><a href="/dates/add"> Add a Date Idea!</a></div>
+		<nav>
+			<ul class='menu' >
+				<li class='menuTabs'><a href="register"> Register!</a></li>
+				<li class='menuTabs'><a href="login"> Login</a></li>
+				<li class='menuTabs'><div id="message">{{ message }}</div> </li>
+				<li class='menuTabs'><div id="spacer"> </div> </li>
+				<li class='menuTabs' id="logout"><a href="logout"> Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	
 
-    <div id="search"><a href="/dates/search"> Search for a Date Idea!</a></div>
+	<br>
+	<div id="add"><a class="button" href="/dates/add"> Add a Date Idea!</a></div>
+	
+	<br><br>
+	<div class="buttons">
+	    <div class="search" id="search"><a class="button" href="search"> Search for a Date Idea! (Category)</a></div>
+	    <div class="search" id="area search"><a class="button" href="area"> Search for a Date Idea! (Area)</a></div>
+	    <div class="search" id="price search"><a class="button" href="price"> Search for a Date Idea! (Price)</a></div>
+	</div>
 
     <!-- add code to show the "top dates" -->
 

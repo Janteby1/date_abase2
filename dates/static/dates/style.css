@@ -6,6 +6,15 @@ body {
 	margin-left: 25px;
 }
 
+.landing {
+	background: url("https://newevolutiondesigns.com/images/freebies/urban-landscape-wallpaper-preview-25.jpg") no-repeat;
+	margin-left: -35px;
+	background-size: cover; 
+	color: white;
+	height:700px;
+	padding-top: 50px;
+}
+
 #input {
 	margin-left: 25px;
 	width: 75%;
@@ -15,10 +24,13 @@ body {
 	display: inline-block;
 	float: right;
 	margin: 30px;
+	text-align: center;
 }
 
 #welcome {
 	font-weight: bold;
+	color: white;
+	text-align: center;
 }
 
 #add {
@@ -72,7 +84,6 @@ a:hover {
 	font-style: italic;
 	display: inline-block;
 	float: right;
-
 }
 
 #price {
@@ -81,15 +92,48 @@ a:hover {
 	font-style: italic;
 }
 
+#user {
+	display: inline-block;
+	font-style: italic;
+	margin-left: 10px;
+}
+
 #parking {
 	display: inline-block;
 	float: left;
 }
 
+.menuTabs{
+	left: 5%;
+	display: inline;
+	margin: 10px;
+	}
 
+.menu{
+	background-color: black;
+	margin-right: 50px;
+	margin-left: -5px;
+}
 
+#message {
+	display: inline;
+	color: yellow;
+	font-style: italic;
+	display: inline;
+}
 
+.button:hover {
+	background-color: red;
+}
 
+#logout {
+	float:right;
+}
+
+.search {
+	display: block;
+	margin: 20px;
+}
 
 
 

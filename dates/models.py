@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone #make sure to set the timezone 
 from django.core.exceptions import ValidationError
 
-
+# this lets us create a drop down menu option
 CATEGORIES = (  
     ('ACT1', 'Activity (Acrobatic)'),
     ('ACT2', 'Activity (Arcade)'),
@@ -43,6 +43,12 @@ CATEGORIES = (
 class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User)
+    # here we can add aditional attributes 
+    '''
+    Included in the django user model are these attributes:
+    Username, Password, Email address, firstname, surname
+    '''
+
 
 class Dates(models.Model):
     place = models.CharField (max_length=120)
@@ -59,7 +65,7 @@ class Dates(models.Model):
     maps = models.URLField (max_length=200, null = True, default = None,)
     created_at = models.DateTimeField(default = timezone.now, editable=False)
     count = models.IntegerField(default = 0)
-    # user = models.ForeignKey(User, null = True, default = None)
+    user = models.ForeignKey(User, null = True, default = None)
 
 
     def save(self, *args, **kwargs):

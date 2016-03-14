@@ -1,6 +1,8 @@
 from django import forms
 from .models import UserProfile, Dates
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.forms import Textarea, CheckboxInput
 
 
 CATEGORIES = (  
@@ -38,6 +40,64 @@ CATEGORIES = (
     ('WEB', 'Website'),
     )
 
+
+AREAS = (  
+    ('Allenhurst', "Allenhurst"),
+    ('Asbury', "Asbury"),
+    ('Astoria', "Astoria"),
+    ('Atlantic City', "Atlantic City"),
+    ('Bay Ridge', "Bay Ridge"),
+    ('Borough Park', "Borough Park"),
+    ('Bradley', "Bradley"),
+    ('Bronx', "Bronx"),
+    ('Brooklyn', "Brooklyn"),
+    ('Brooklyn Hieghts', "Brooklyn Hieghts"),
+    ('Caroll Gardens', "Caroll Gardens"),
+    ('Central Park', "Central Park"),
+    ('Chelsea', "Chelsea"),
+    ('Cobble Hill', "Cobble Hill"),
+    ('Coney Island', "Coney Island"),
+    ('Crown Hieghts', "Crown Hieghts"),
+    ('Deal', "Deal"),
+    ('Dumbo', "Dumbo"),
+    ('East Rutherford', "East Rutherford"),
+    ('Eatontown', "Eatontown"),
+    ('Edison', "Edison"),
+    ('Elizabeth', "Elizabeth"),
+    ('Financial District', "Financial District"),
+    ('Five Towns', "Five Towns"),
+    ('Flatiron', "Flatiron"),
+    ('Greenich Village', "Greenich Village"),
+    ('Greatneck', "Greatneck"),
+    ('Hazlet', "Hazlet"),
+    ('Jackson', "Jackson"),
+    ('Keansburg', "Keansburg"),
+    ('Kips Bay', "Kips Bay"),
+    ('Lakewood', "Lakewood"),
+    ('Lenox Hill', "Lenox Hill"),
+    ('Long Island', "Long Island"),
+    ('Malboro', "Malboro"),
+    ('Midtown', "Midtown"),
+    ('Monsey', "Monsey"),
+    ('Mt Vernon', "Mt Vernon"),
+    ('New Rochelle', "New Rochelle"),
+    ('Newark', "Newark"),
+    ('Oakhurst', "Oakhurst"),
+    ('Park Slope', "Park Slope"),
+    ('Point Pleasant', "Point Pleasant"),
+    ('Prospect Park', "Prospect Park"),
+    ('Queens', "Queens"),
+    ('Red Bank', "Red Bank"),
+    ('Seaside Hieghts', "Seaside Hieghts"),
+    ('Staten Island', "Staten Island"),
+    ('Tinton Falls', "Tinton Falls"),
+    ('Union Square', "Union Square"),
+    ('Upper East Side', "Upper East Side"),
+    ('West Village', "West Village"),
+    ('Williamsburg', "Williamsburg"),
+    )
+
+
 class AddDateForm(forms.ModelForm):
 # how do you make some of them optional input?
     parking = forms.CharField(required=False)
@@ -63,6 +123,7 @@ class AddDateForm(forms.ModelForm):
         ]
 
         widgets = {
+            # this autofill the form
             'place': forms.TextInput(attrs={'placeholder': 'Ex: Wolf and Lamb'}),
             'area': forms.TextInput(attrs={'placeholder': 'Ex: West Village'}),
             'state': forms.TextInput(attrs={'placeholder': 'Ex: NY'}),
@@ -72,6 +133,13 @@ class AddDateForm(forms.ModelForm):
             'price': forms.TextInput(attrs={'placeholder': 'Ex: $$'}),
             'parking': forms.TextInput(attrs={'placeholder': 'Ex: Street'}),
         }
+
+
+# form used to register a user
+class UserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ("first_name","username", "email", "password1", "password2")
 
 
 # need a search form to get date ideas by catergory using check boxes
@@ -84,6 +152,18 @@ class SearchDateForm(forms.ModelForm):
 
         fields = [
             "category_choice", 
+        ]
+
+
+class SearchDateForm_Area(forms.ModelForm):   
+    area_choice = forms.MultipleChoiceField(required=False,
+        widget=forms.CheckboxSelectMultiple, choices=AREAS)
+
+    class Meta:
+        model = Dates
+
+        fields = [
+            "area_choice", 
         ]
 
 
