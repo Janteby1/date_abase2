@@ -2,32 +2,22 @@
 
 {% block content %}
 
-	<header>
-		<h1>Welcome!</h1>
-
-		<nav>
-			<ul class='menu' >
-				<li class='menuTabs'><a href="register"> Register!</a></li>
-				<li class='menuTabs'><a href="login"> Login</a></li>
-				<li class='menuTabs'><div id="message">{{ message }}</div> </li>
-				<li class='menuTabs'><div id="spacer"> </div> </li>
-				<li class='menuTabs' id="logout"><a href="logout"> Logout</a></li>
-			</ul>
-		</nav>
-	</header>
-	
-
+	<div id="message">{{ message }}</div>
 	<br>
-	<div id="add"><a class="button" href="/dates/add"> Add a Date Idea!</a></div>
-	
-	<br><br>
-	<div class="buttons">
-	    <div class="search" id="search"><a class="button" href="search"> Search for a Date Idea! (Category)</a></div>
-	    <div class="search" id="area search"><a class="button" href="area"> Search for a Date Idea! (Area)</a></div>
-	    <div class="search" id="price search"><a class="button" href="price"> Search for a Date Idea! (Price)</a></div>
-	</div>
 
-    <!-- add code to show the "top dates" -->
+	<div class ="landing">
+    <h2 id="welcome">Welcome to the Date Idea Website!</h2>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <h2 id="welcome"><em>Most populare date ideas - Coming Soon!</em></h2>
+
+<!-- 	<div class="row">
+	    <div id="explore" class= "small-4 small-offset-4 columns"><a class="expanded button" href="/dates"> Explore!</a></div>
+	</div>
+ -->
+
+	</div>
 
 {% endblock content %}
 

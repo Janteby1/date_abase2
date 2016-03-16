@@ -48,6 +48,17 @@ class Index(View):
 
 
 
+class About(View):
+    def get(self, request):
+        return render(request, "dates/about.html")
+
+
+class Search_By(View):
+    def get(self, request):
+        return render(request, "dates/search_by.html")
+
+
+
 class User_Register(View):
     # pu.db
     template = "dates/register.html"

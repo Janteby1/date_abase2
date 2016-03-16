@@ -63,6 +63,12 @@ a:hover {
 	padding-bottom: 35px;
 }
 
+.form {
+	margin-right: 12em;
+	margin-left: 2em;
+	font-style: 
+}
+
 .entry {
 	margin-top: 5px;
 }
@@ -111,13 +117,12 @@ a:hover {
 
 .menu{
 	background-color: black;
-	margin-right: 50px;
-	margin-left: -5px;
+	margin-left: -10px;
 }
 
 #message {
 	display: inline;
-	color: yellow;
+	color: #2199e8;
 	font-style: italic;
 	display: inline;
 }
@@ -135,5 +140,17 @@ a:hover {
 	margin: 20px;
 }
 
+#about {
+	margin-left: 3em;
+	margin-right: 8em;
+	text-align: justify;
+	background-color: #2199e8;
+    padding: 2em;
+    padding-right: 4em;
+    padding-left: 4em;
+    border-radius: 20px;
+    color: white;
+/*    font-weight: bold;
+*/}
 
 

@@ -12,7 +12,25 @@
 </head>
 <body>
 
-    <h1>Date-abase</h1>
+    <header>
+        <br>
+        <nav>
+            <ul class='menu' >
+                <li class='menuTabs'><a href="/dates"> Home </a></li>
+                <li class='menuTabs'><a href="add"> Add Date</a></li>
+                <li class='menuTabs'><a href="search_by"> Search Dates</a></li>
+                <li class='menuTabs'><a href="about"> About</a></li>
+
+                    <li class='menuTabs'><a href="">               </a></li>
+                <li class='menuTabs'><a href="register"> Register!</a></li>
+                <li class='menuTabs'><a href="login"> Login</a></li>
+
+                <li class='menuTabs' id="logout"><a href="logout"> Logout</a></li>
+            </ul>
+        </nav>
+        <br>
+    </header>
+
 
     <div class=container>
         {% block content %}

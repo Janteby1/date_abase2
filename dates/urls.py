@@ -4,6 +4,7 @@ from dates import views #gets all our view functions
 
 urlpatterns = [
     url(r'^$', views.Index.as_view(), name='index'),
+    url(r'^about$', views.About.as_view(), name='about'),
 
     url(r'^register$', views.User_Register.as_view(), name='register'),
     url(r'^login$', views.User_Login.as_view(), name='login'),
@@ -13,4 +14,5 @@ urlpatterns = [
     url(r'^search$', views.SearchDate.as_view(), name='search'),
     url(r'^area$', views.SearchDate_Area.as_view(), name='search_area'),
     url(r'^results$', views.SearchDate.as_view(), name='results'),
+    url(r'^search_by$', views.Search_By.as_view(), name='search_by'),
 ]
