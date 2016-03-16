@@ -4,8 +4,8 @@ Add user constraints to add, edit and delete date ideas - Done
 Add search by area - Done
 Add about page - Done
 Add nav bar - Done
+Fix "hello x" logged in message - Done 
 
-Fix "hello x" logged in message (send it to base)
 Create drop down search by menu 
 Add edit and delete date idea (with contraints)
 
