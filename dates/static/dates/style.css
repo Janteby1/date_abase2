@@ -55,7 +55,7 @@ a:hover {
 }
 
 .result {
-	background-color: #cccccc;
+	background-color: #F1F1F1;;
 	padding: 5px;
 	border-radius: 15px;
 	margin-top: 15px;
@@ -121,14 +121,13 @@ a:hover {
 }
 
 #message {
-	display: inline;
-	color: yellow;
+	color: blue;
 	font-style: italic;
 	display: inline;
 }
 
-.button:hover {
-	background-color: red;
+.btn:hover {
+	color: red;
 }
 
 .search {
@@ -140,14 +139,12 @@ a:hover {
 	margin-left: 3em;
 	margin-right: 8em;
 	text-align: justify;
-	background-color: #2199e8;
+	background-color: #F1F1F1;
     padding: 2em;
     padding-right: 4em;
     padding-left: 4em;
     border-radius: 20px;
-    color: white;
-/*    font-weight: bold;
-*/}
+}
 
 
 

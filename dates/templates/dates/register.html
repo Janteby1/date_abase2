@@ -4,7 +4,8 @@
 
     <h2><em>Registration</em></h2>
 
-    <form class="form" method="post" action="{% url 'dates:register' %}">
+    <form class="form-inline" method="post" action="{% url 'dates:register' %}">
+    	<fieldset class="form-group">
 
             {% csrf_token %}
 
@@ -13,7 +14,8 @@
             {{ user_form.as_p }}
 
             <br>
-            <input class="button" id ="registerbutton" type="submit" name="submit" value="Register" />
-        </form>
+            <input type="submit" class="btn btn-default" id ="registerbutton" name="submit" value="Register" />
+    	</fieldset>
+    </form>
 
 {% endblock content %}

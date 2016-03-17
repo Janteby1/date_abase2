@@ -3,8 +3,8 @@
 {% block content %}
 
     <h2><em>Search Date-abase</em></h2>
-    
-    <form action="{% url 'dates:search_area' %}" method="POST">
+
+    <form class="form" action="{% url 'dates:search_area' %}" method="POST">
         {% csrf_token %}
 
             {% for field in search_date_form_area %}
@@ -18,7 +18,7 @@
 
             {% endfor %}
             
-        <input type="submit" class="button" value="Get Date Ideas!"/>
+        <input type="submit" class="btn btn-default" value="Get Date Ideas!"/>
     </form>
 
     <a id="home" href="/dates"> Back Home </a>

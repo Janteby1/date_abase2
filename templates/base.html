@@ -4,42 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Date_abase</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css">
+
+<!--     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css">
+ -->    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'dates/style.css' %}" />
     <script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js"></script>
 
 </head>
 <body>
-
-    <header>
+    <div class="container">
+    <!-- <header> -->
         <br>
-        <nav>
-            <ul class='menu' >
-                <li class='menuTabs'><a href="/dates"> Home </a></li>
-                <li class='menuTabs'><a href="add"> Add Date</a></li>
-                <li class='menuTabs'>
-                    <a href="search_by"> Search Dates</a>
-<!--                     <ul>
-                        <li class='menuTabs'><a href="search"> Search by Category </a></li>
-                        <li class='menuTabs'><a href="area"> Search by Area</a></li>
-                        <li class='menuTabs'><a href="price"> Search by Price</a></li>
+        <nav class="navbar navbar-default">
+            <div class="container">
+            <ul class='nav navbar-nav' data-dropdown-menu>
+                <li><a href="/dates"> Home </a></li>
+                <li><a href="add"> Add Date</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search Dates</a>
+                    <ul id="" class="dropdown-menu">
+                      <li><a href="search">Search by Category</a></li>
+                      <li><a href="area">Search by Area</a></li>
+                      <li><a href="#">Search by Price</a></li>
                     </ul>
- -->                </li>
-                <li class='menuTabs'><a href="about"> About</a></li>
-                <li class='menuTabs'><a href="register"> Register!</a></li>
-                <li class='menuTabs'><a href="login"> Login</a></li>
-                <li class='menuTabs'><a id="message" href=""> {{ user.username }}</a></li>
-                <li class='menuTabs' id="logout"><a href="logout"> Logout</a></li>
+                </li>
+                <li><a href="about"> About</a></li>
+                <li><a href="register"> Register!</a></li>
+                <li><a href="login"> Login</a></li>
+                <li><a id="message" href=""> {{ user.username }}</a></li>
+                <li id="logout"><a href="logout"> Logout</a></li>
             </ul>
+            </div>    
         </nav>
-    </header>
+
+    <!-- </header> -->
 
 
-    <div class=container>
+    <div>
         {% block content %}
 
         {% endblock content %}
+    </div>
     </div>
 
 </body>
