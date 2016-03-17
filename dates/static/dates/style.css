@@ -131,10 +131,6 @@ a:hover {
 	background-color: red;
 }
 
-#logout {
-	float:right;
-}
-
 .search {
 	display: block;
 	margin: 20px;
@@ -152,5 +148,6 @@ a:hover {
     color: white;
 /*    font-weight: bold;
 */}
+
 
 

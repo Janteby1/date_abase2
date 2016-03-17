@@ -2,6 +2,8 @@
 
 {% block content %}
 
+    <h2><em>Search Date-abase</em></h2>
+    
     <form action="{% url 'dates:search_area' %}" method="POST">
         {% csrf_token %}
 
