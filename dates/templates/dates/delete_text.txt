@@ -1,4 +1,0 @@
-    <form action="{% url 'dates:delete' dates_slug=dates.slug %}" method ="POST">
-        {% csrf_token %}
-        <input type="submit" class="button" id= "delete" value="Delete Date Idea" />
-    </form>
