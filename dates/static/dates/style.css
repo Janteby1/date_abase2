@@ -130,6 +130,10 @@ a:hover {
 	color: red;
 }
 
+.btn-default{
+	background-color: blue;
+}
+
 .search {
 	display: block;
 	margin: 20px;
