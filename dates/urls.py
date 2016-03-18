@@ -10,9 +10,12 @@ urlpatterns = [
     url(r'^login$', views.User_Login.as_view(), name='login'),
     url(r'^logout$', views.User_Logout.as_view(), name='logout'),
 
+    # here we send the url to the views with the slug id attached to it
+    url(r'^edit/(?P<dates_slug>[A-Za-z0-9\-\_]+)$', views.Edit_Date.as_view(), name="edit"),
+    url(r'^delete/(?P<dates_slug>[A-Za-z0-9\-\_]+)$', views.Delete_Date.as_view(), name='delete'),
+
     url(r'^add$', views.AddDate.as_view(), name='add'),
     url(r'^search$', views.SearchDate.as_view(), name='search'),
     url(r'^area$', views.SearchDate_Area.as_view(), name='search_area'),
     url(r'^results$', views.SearchDate.as_view(), name='results'),
-    url(r'^search_by$', views.Search_By.as_view(), name='search_by'),
 ]

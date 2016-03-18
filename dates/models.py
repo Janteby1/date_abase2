@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone #make sure to set the timezone 
 from django.core.exceptions import ValidationError
+from django.utils.text import slugify
 
 # this lets us create a drop down menu option
 CATEGORIES = (  
@@ -64,12 +65,18 @@ class Dates(models.Model):
     parking = models.CharField (max_length=20, null = True, default = None,)
     maps = models.URLField (max_length=200, null = True, default = None,)
     created_at = models.DateTimeField(default = timezone.now, editable=False)
+    updated_at = models.DateTimeField()
     count = models.IntegerField(default = 0)
     user = models.ForeignKey(User, null = True, default = None)
+    slug = models.SlugField(max_length=40)
+    show = models.BooleanField(default=True)
 
-
+    # this is a custom save method
     def save(self, *args, **kwargs):
-        # self.full_clean()
+        self.slug = slugify(self.place)
+        self.updated_at = timezone.now()
+        if not self.id:
+            self.created_at = timezone.now()
         super(Dates, self).save(*args, **kwargs)
 
 

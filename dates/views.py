@@ -53,12 +53,6 @@ class About(View):
         return render(request, "dates/about.html")
 
 
-class Search_By(View):
-    def get(self, request):
-        return render(request, "dates/search_by.html")
-
-
-
 class User_Register(View):
     # pu.db
     template = "dates/register.html"
@@ -140,6 +134,7 @@ class AddDate(View):
         return render(request, self.template, context)
 
     def post(self, request):
+        # checks to make sure the user is logged in 
         if not request.user.is_authenticated():
             return HttpResponseForbidden(render (request, "403.html"))
 
@@ -211,6 +206,51 @@ class SearchDate_Area(View):
         else:
             return HttpResponseForbidden(render (request, "403.html"))
 
+
+
+
+# make migrations
+# add buttons 
+# need to find a way to check that the author of the date object is the saem as the user signed in trying to change it
+
+class Edit_Date(View):
+    template = "dates/edit.html"
+
+    # here we get the slug id passed in with the url 
+    def get(self, request, dates_slug=None):
+        date = Dates.objects.get(slug=dates_slug)
+        # get the form and populate it with the value that is already there, AKA what we want to edit
+        form = AddDateForm(instance=date)
+        context = {
+            "date": date,
+            "EditForm": form }
+        return render(request, self.template, context)
+
+    def post(self, request, dates_slug=None):
+        date = Dates.objects.get(slug=dates_slug) 
+        form = AddDateForm(data=request.POST, instance=date)
+
+        if form.is_valid():
+            form.save()
+            return redirect("/dates")
+        else:
+            context = {
+                "date": date,
+                "EditForm": form,}
+            # if it is not valid just send it back with the errors attached
+            return render(request, self.template, context)
+
+
+class Delete_Date(View):
+    template = "dates/login.html"
+    # dont need a get just get the slug id and change the value for show
+    def post(self, request, dates_slug=None):
+
+        date = Dates.objects.get(slug=dates_slug)
+        # dont earase it just make the show field false so it wont show on index page
+        date.show = False
+        date.save()
+        return redirect(template)
 
 
 

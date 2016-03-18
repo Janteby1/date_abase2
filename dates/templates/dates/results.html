@@ -7,6 +7,9 @@
 
         {% for date in dates %}
             <div class="result"> 
+                <div class="entry" id="link"> <a href="/dates/edit/{{ date.slug }}"> <div> {{ date.place }} 
+            </div></a></div>
+
                 <div class="entry" id="place">Date Idea: {{ date.place }}</div>
                 <div class="entry" id="address">Address: <br> {{ date.address }}</div>
                 <div class="entry" id="area">Area: {{ date.area }}</div>
