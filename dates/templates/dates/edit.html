@@ -12,14 +12,14 @@
         {{ EditForm|bootstrap }}
 
         <div class="form-group">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit Edits</button>
         </div>
     </form>
 
 
-    <form class = "form" role="form" action="{% url 'dates:delete' dates_slug=dates.slug %}" method ="POST">
+    <form class = "form" role="form" action="{% url 'dates:delete' dates_slug=date.slug %}" method ="POST">
         {% csrf_token %}
-        <input type="submit" class="button" id="delete" value="Delete Date Idea" />
+        <input type="submit" class="btn btn-primary" id="delete" value="Delete Date Idea" />
     </form>
 
     <a id="home" href="/dates"> Back Home </a>

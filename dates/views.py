@@ -207,24 +207,36 @@ class SearchDate_Area(View):
             return HttpResponseForbidden(render (request, "403.html"))
 
 
+class DateDetails(View):
+    def get(self, request, dates_slug=None):
+        # this returns a list of all the date ideas returned from the db 
+        date = Dates.objects.get(slug=dates_slug) 
+        print (date)
+        context = {
+            'date': date,}
+        return render(request, "dates/details.html", context)
 
 
-# make migrations
-# add buttons 
-# need to find a way to check that the author of the date object is the saem as the user signed in trying to change it
+# need to find a way to check that the author of the date object is the same as the user signed in trying to change it
 
 class Edit_Date(View):
     template = "dates/edit.html"
 
     # here we get the slug id passed in with the url 
     def get(self, request, dates_slug=None):
-        date = Dates.objects.get(slug=dates_slug)
-        # get the form and populate it with the value that is already there, AKA what we want to edit
-        form = AddDateForm(instance=date)
-        context = {
-            "date": date,
-            "EditForm": form }
-        return render(request, self.template, context)
+        if request.user.is_authenticated():
+            date = Dates.objects.get(slug=dates_slug) 
+            if request.user == date.user:
+                # get the form and populate it with the value that is already there, AKA what we want to edit
+                form = AddDateForm(instance=date)
+                context = {
+                    "date": date,
+                    "EditForm": form }
+                return render(request, self.template, context)
+            else: 
+                return HttpResponseForbidden(render (request, "403.html"))
+        else: 
+            return HttpResponseForbidden(render (request, "403.html"))
 
     def post(self, request, dates_slug=None):
         date = Dates.objects.get(slug=dates_slug) 
@@ -242,7 +254,6 @@ class Edit_Date(View):
 
 
 class Delete_Date(View):
-    template = "dates/login.html"
     # dont need a get just get the slug id and change the value for show
     def post(self, request, dates_slug=None):
 
@@ -250,7 +261,7 @@ class Delete_Date(View):
         # dont earase it just make the show field false so it wont show on index page
         date.show = False
         date.save()
-        return redirect(template)
+        return redirect("/dates/login")
 
 
 

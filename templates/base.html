@@ -11,6 +11,7 @@
  -->    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'dates/style.css' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js"></script>
@@ -24,32 +25,29 @@
             <div class="container">
             <ul class='nav navbar-nav' data-dropdown-menu>
                 <li><a href="/dates"> Home </a></li>
-                <li><a href="add"> Add Date</a></li>
+                <li><a href="{% url 'dates:add' %}"> Add Date</a></li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search Dates</a>
                     <ul id="" class="dropdown-menu">
-                      <li><a href="search">Search by Category</a></li>
-                      <li><a href="area">Search by Area</a></li>
+                      <li><a href="{% url 'dates:search' %}">Search by Category</a></li>
+                      <li><a href="{% url 'dates:search_area' %}">Search by Area</a></li>
                       <li><a href="#">Search by Price</a></li>
                     </ul>
                 </li>
-                <li><a href="about"> About</a></li>
-                <li><a href="register"> Register!</a></li>
-                <li><a href="login"> Login</a></li>
+                <li><a href="{% url 'dates:about' %}"> About</a></li>
+                <li><a href="{% url 'dates:register' %}"> Register!</a></li>
+                <li><a href="{% url 'dates:login' %}"> Login</a></li>
                 <li><a id="message" href=""> {{ user.username }}</a></li>
-                <li id="logout"><a href="logout"> Logout</a></li>
+                <li id="logout"><a href="{% url 'dates:logout' %}"> Logout</a></li>
             </ul>
             </div>    
         </nav>
 
     <!-- </header> -->
 
-
-    <div>
         {% block content %}
 
         {% endblock content %}
-    </div>
     </div>
 
 </body>

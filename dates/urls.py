@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^search$', views.SearchDate.as_view(), name='search'),
     url(r'^area$', views.SearchDate_Area.as_view(), name='search_area'),
     url(r'^results$', views.SearchDate.as_view(), name='results'),
+    url(r'^details/(?P<dates_slug>[A-Za-z0-9\-\_]+)$', views.DateDetails.as_view(), name='details'),
 ]
