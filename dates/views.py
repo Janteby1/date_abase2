@@ -7,7 +7,7 @@ import json
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
-from .forms import AddDateForm, SearchDateForm, UserForm, SearchDateForm_Area
+from .forms import AddDateForm, SearchDateForm, UserForm, SearchDateForm_Area, SearchDateForm_Price
 from .models import UserProfile, Dates 
 
 
@@ -45,8 +45,6 @@ class Index(View):
 
         # send them all to the template
         return render(request, "dates/index.html", context)
-
-
 
 class About(View):
     def get(self, request):
@@ -114,8 +112,6 @@ class User_Login(View):
 
 
 class User_Logout(View):
-    # Use the login_required() decorator to ensure only those logged in can access the view.
-    # @login_required
     def get(self, request):
         # Since we know the user is logged in, we can now just log them out.
         logout(request)
@@ -207,6 +203,33 @@ class SearchDate_Area(View):
             return HttpResponseForbidden(render (request, "403.html"))
 
 
+class SearchDate_Price(View):
+    template = "dates/search_price.html"
+
+    def get(self, request):
+        form = SearchDateForm_Price()
+        context = {
+            'search_date_form_price': form,}
+        return render(request, self.template, context)
+
+    # need to pass the check box values to the db and retun the date ideas
+    def post(self, request):
+        form = SearchDateForm_Price(data=request.POST)
+        if form.is_valid():
+
+            # this gets all the values the user checked
+            codes =(request.POST.getlist("price_choice"))
+
+            # this returns a list of all the date ideas returned from the db 
+            dates = Dates.objects.filter(price__in=codes)
+            context = {
+                'dates': dates,}
+            return render(request, "dates/results.html", context)
+
+        else:
+            return HttpResponseForbidden(render (request, "403.html"))
+
+
 class DateDetails(View):
     def get(self, request, dates_slug=None):
         # this returns a list of all the date ideas returned from the db 
@@ -216,8 +239,6 @@ class DateDetails(View):
             'date': date,}
         return render(request, "dates/details.html", context)
 
-
-# need to find a way to check that the author of the date object is the same as the user signed in trying to change it
 
 class Edit_Date(View):
     template = "dates/edit.html"

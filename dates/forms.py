@@ -97,6 +97,12 @@ AREAS = (
     ('Williamsburg', "Williamsburg"),
     )
 
+PRICES = (  
+    ('$', "$"),
+    ('$$', "$$"),
+    ('$$$', "$$$"),
+    ('$$$$', "$$$$"),
+    ) 
 
 class AddDateForm(forms.ModelForm):
 # how do you make some of them optional input?
@@ -165,6 +171,18 @@ class SearchDateForm_Area(forms.ModelForm):
         fields = [
             "area_choice", 
         ]
+
+class SearchDateForm_Price(forms.ModelForm):   
+    price_choice = forms.MultipleChoiceField(required=False,
+        widget=forms.CheckboxSelectMultiple, choices=PRICES)
+
+    class Meta:
+        model = Dates
+
+        fields = [
+            "price_choice", 
+        ]
+
 
 
 
