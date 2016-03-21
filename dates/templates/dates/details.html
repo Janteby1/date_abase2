@@ -3,34 +3,19 @@
 {% block content %}
     
     <h2>Details: {{ date.place }}</h2>
-    {% if dates %}
-
-        {% for date in dates %}
-            {% if date.show %}
-            <div class="result"> 
-                <div class="entry" id="link"> <a href="/dates/edit/{{ date.slug }}"> <div> {{ date.place }} 
-            </div></a></div>
-
-                <div class="entry" id="place">Date Idea: {{ date.show }}</div>
-                <div class="entry" id="address">Address: <br> {{ date.address }}</div>
-                <div class="entry" id="area">Area: {{ date.area }}</div>
-                <br><br>
-                <div class="entry" id="notes">Notes: <br> {{ date.notes }}</div>
-                <br>
-                <div class="entry" id="phone">Contact: {{ date.phone }}</div>
-                <div class="entry" id="website">Website: {{ date.website }}</div>
-                <div class="entry" id="price">Price: {{ date.price }}</div>
-                <div class="entry" id="parking">Parking options: {{ date.parking }}</div>
-            </div>
-            <div class="entry" id="user">Author: {{ date.user }}</div>
-            {% endif %}
-            {% endfor %}
-            <div class="entry" id="user">End of Seach Results </div>
-
-    {% else %}
-        <p>No Results to your search, try again.</p>
-    {% endif %}
-
+        <div class="details"> 
+            <div class="entry" id="place">Date Idea: {{ date.place }}</div>
+            <div class="entry" id="address">Address: <br> {{ date.address }}</div>
+            <div class="entry" id="area">Area: {{ date.area }}</div>
+            <br><br>
+            <div class="entry" id="notes">Notes: <br> {{ date.notes }}</div>
+            <br>
+            <div class="entry" id="phone">Contact: {{ date.phone }}</div>
+            <div class="entry" id="website">Website: {{ date.website }}</div>
+            <div class="entry" id="price">Price: {{ date.price }}</div>
+            <div class="entry" id="parking">Parking options: {{ date.parking }}</div>
+        </div>
+        <div class="entry" id="user">Author: {{ date.user }}</div>
 
     <br>
     <a id="home" href="/dates"> Back Home </a>

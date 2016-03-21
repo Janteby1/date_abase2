@@ -60,6 +60,15 @@ a:hover {
 	border-radius: 15px;
 	margin-top: 15px;
 	margin-right: 15px;
+	padding-bottom: 15px;
+}
+
+.details {
+	background-color: #F1F1F1;;
+	padding: 5px;
+	border-radius: 15px;
+	margin-top: 15px;
+	margin-right: 15px;
 	padding-bottom: 35px;
 }
 
@@ -160,5 +169,13 @@ a:hover {
 	color: yellow;
 }
 
+#detail {
+	color: black;
+	font-weight: bold;
+}
+
+#detail:hover {
+	color: red;
+}
 
 
