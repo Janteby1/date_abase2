@@ -224,13 +224,19 @@ class Edit_Date(View):
 
     # here we get the slug id passed in with the url 
     def get(self, request, dates_slug=None):
-        date = Dates.objects.get(slug=dates_slug)
-        # get the form and populate it with the value that is already there, AKA what we want to edit
-        form = AddDateForm(instance=date)
-        context = {
-            "date": date,
-            "EditForm": form }
-        return render(request, self.template, context)
+        if request.user.is_authenticated():
+            date = Dates.objects.get(slug=dates_slug) 
+            if request.user == date.user:
+                # get the form and populate it with the value that is already there, AKA what we want to edit
+                form = AddDateForm(instance=date)
+                context = {
+                    "date": date,
+                    "EditForm": form }
+                return render(request, self.template, context)
+            else: 
+                return HttpResponseForbidden(render (request, "403.html"))
+        else: 
+            return HttpResponseForbidden(render (request, "403.html"))
 
     def post(self, request, dates_slug=None):
         date = Dates.objects.get(slug=dates_slug) 
