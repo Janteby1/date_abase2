@@ -209,9 +209,7 @@ class SearchDate_Area(View):
 
 
 
-# make migrations
-# add buttons 
-# need to find a way to check that the author of the date object is the saem as the user signed in trying to change it
+# need to find a way to check that the author of the date object is the same as the user signed in trying to change it
 
 class Edit_Date(View):
     template = "dates/edit.html"
@@ -242,7 +240,6 @@ class Edit_Date(View):
 
 
 class Delete_Date(View):
-    template = "dates/login.html"
     # dont need a get just get the slug id and change the value for show
     def post(self, request, dates_slug=None):
 
@@ -250,7 +247,7 @@ class Delete_Date(View):
         # dont earase it just make the show field false so it wont show on index page
         date.show = False
         date.save()
-        return redirect(template)
+        return redirect("/dates/login")
 
 
 

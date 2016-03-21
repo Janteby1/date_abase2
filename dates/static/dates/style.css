@@ -149,5 +149,16 @@ a:hover {
     border-radius: 20px;
 }
 
+#delete {
+	float: left;
+	margin: 20px;
+	margin-left: -2em;
+}
+
+#delete:hover {
+	font-size: 20px;
+	color: yellow;
+}
+
 
 
