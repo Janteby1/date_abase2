@@ -1,34 +1,34 @@
 $(document).ready(function(){
   console.log("Hi there!")
 
-  $('#comment').on('click', function(event){ //form submit event handler
-    event.preventDefault();//prevents default which would reload page
+  // $('#comment').on('click', function(event){ //form submit event handler
+  //   event.preventDefault();//prevents default which would reload page
 
-    // this get the value of their comment text box from the form 
-    var comment = $('#comment_form #id_content').val()
-    console.log(comment); //for testing
+  //   // this get the value of their comment text box from the form 
+  //   var comment = $('#comment_form #id_content').val()
+  //   console.log(comment); //for testing
 
-    var data = $("#comment_form").serialize() // returns all the data in your form
-    console.log(data); //for testing 
+  //   var data = $("#comment_form").serialize() // returns all the data in your form
+  //   console.log(data); //for testing 
 
 
-    // sending the data to the url then view
-    $.ajax({
-        method: "POST",
-        url: ("/news/comment/" + $('#post_slug_thing').html()), // sends through with the slug value
-        data: data,
+  //   // sending the data to the url then view
+  //   $.ajax({
+  //       method: "POST",
+  //       url: ("/news/comment/" + $('#post_slug_thing').html()), // sends through with the slug value
+  //       data: data,
 
-      // comes back from the view with a json respone to our data 
-      success:function(response){
-        console.log(response) //for testing
+  //     // comes back from the view with a json respone to our data 
+  //     success:function(response){
+  //       console.log(response) //for testing
 
-        // basicallly prints it out by attaching it to a div (not using mustache)
-        $('#comment_div').text(response["comment"])
-      }
-    })
-    // this tells the user they have submitted the comment when they click the button
-    $('#submit_comment_div').text("Comment submitted!");
-  })
+  //       // basicallly prints it out by attaching it to a div (not using mustache)
+  //       $('#comment_div').text(response["comment"])
+  //     }
+  //   })
+  //   // this tells the user they have submitted the comment when they click the button
+  //   $('#submit_comment_div').text("Comment submitted!");
+  // })
 
 
 /////////////////////       ////////////////////         /////////////////////

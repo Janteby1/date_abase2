@@ -214,12 +214,12 @@ class SearchDate_Price(View):
 
 
 class DateDetails(View):
-    def get(self, request):
+    def get(self, request, dates_slug=None):
         # if we just want an ajax request we dont need a seperate class 
         if request.is_ajax():
-            pk=request.GET.get("date_id")
+            pk=request.GET.get("id")
             # do all the logic and filtering here, only get the comments that are shown and have the right id 
-            dates = Date.objects.filter(date_id=pk,show=True)
+            dates = Dates.objects.filter(id=pk,show=True)
             # put all the values into a json dictionary with a method called from the models
             dates = [date.to_json() for date in dates]
             # put all the commentss into a context dict
