@@ -79,5 +79,24 @@ class Dates(models.Model):
             self.created_at = timezone.now()
         super(Dates, self).save(*args, **kwargs)
 
+    def to_json(self):
+        return {
+            "place": self.place,
+            "category": self.category,
+            "address": self.address,
+            "area": self.area,
+            "state": self.state, 
+            "phone": self.phone,
+            "notes": self.notes,
+            "website": self.website,
+            "price": self.price,
+            "parking": self.parking,
+            "maps": self.maps,
+            "created_at": self.created_at,
+            "updated_at": self.updated_at,
+            "count": self.count,
+            "slug": self.slug,
+            "show": self.show,
+        }
 
 
