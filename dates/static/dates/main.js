@@ -53,7 +53,7 @@ $(document).ready(function(){
 // Use jQuery to target the div with the id of our postFK that we renamed to post 
 // and change the inside of it's html with the variable of the rendered data
 	
-    		var template = $('#details_div').html();
+    		var template = $('#details').html();
 			// we get an object with a property comments, so here we call data.comments or just pass the data
 			var renderM = Mustache.render(template,data);
 			console.log(renderM); //for testing 

@@ -28,7 +28,6 @@
                 <div class="details_div" id= "{{date.id}}">
                     <!-- this is where everything from mustache will render -->
                 </div>
-                {%include 'details_ajax.html' %}
 
 
             {% endif %}
@@ -40,6 +39,8 @@
         <p>No Results to your search, try again.</p>
     {% endif %}
 
+    {%include 'dates/detail_ajax.html' %}
+    
 
     <br>
     <a id="home" href="/dates"> Back Home </a>
