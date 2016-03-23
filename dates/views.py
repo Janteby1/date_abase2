@@ -217,7 +217,7 @@ class DateDetails(View):
     def get(self, request, dates_slug=None):
         # if we just want an ajax request we dont need a seperate class 
         if request.is_ajax():
-            pk=request.GET.get("id")
+            pk=request.GET.get("date_id")
             # do all the logic and filtering here, only get the comments that are shown and have the right id 
             dates = Dates.objects.filter(id=pk,show=True)
             # put all the values into a json dictionary with a method called from the models
@@ -225,6 +225,7 @@ class DateDetails(View):
             # put all the commentss into a context dict
             data = {
                 "dates": dates }
+            print (data)
             return JsonResponse(data) # return a json object to the ajax request
 
     # def get(self, request, dates_slug=None):

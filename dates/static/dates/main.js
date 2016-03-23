@@ -46,28 +46,20 @@ $(document).ready(function(){
         data: data, //only sends the id so we can do the logic and sorting of db in our view
         success: function(data){
         	console.log("here"); //for testing 
-            console.log(data)
-
+            console.log(data["dates"][0]["notes"])
 
 // This will target the element with an id of list in the mustache file
 // We use Mustache's "render" function to take the targeted template and load it with the data we got back earlier
 // Use jQuery to target the div with the id of our postFK that we renamed to post 
 // and change the inside of it's html with the variable of the rendered data
 	
-    		var template = $('#detail').html();
+    		var template = $('#details_div').html();
 			// we get an object with a property comments, so here we call data.comments or just pass the data
 			var renderM = Mustache.render(template,data);
 			console.log(renderM); //for testing 
 
-			// // if (typeof comments === 'undefined'){
-			// // 	console.log("There are no comments on this post");
-			// // }
-
-			// var comment_fk = (data.comments[0].post) // gets the post fk from the comment data we send back
-			// var post = $("#" + comment_fk) // targets the right div in the DOM that has the same post id as ou post FK
-
-			// // if (comment_fk === post) {
-			// 	post.html(renderM) // just attach it to post adn we dont need to conditional 
+			// if (comment_fk === post) {
+			$(".details_div").html(renderM) // just attach it to post and we dont need to conditional 
                 
 			}
 		})

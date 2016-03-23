@@ -1,29 +1,25 @@
 {% verbatim %}
 	
-	<script id="detail" type="x-tmpl-mustache">
+	<script id="details" type="x-tmpl-mustache">
 
-    <h2>Details: {{ date.place }}</h2>
-        <div class="details"> 
-            <div class="entry" id="place">{{ date.place }}</div>
-            <div class="entry" id="address">Address: <br> {{ date.address }}</div>
-            <div class="entry" id="area">Area: {{ date.area }}</div>
-            <br><br>
-            <div class="entry" id="notes">Notes: <br> {{ date.notes }}</div>
-            <br>
-            <div class="entry" id="phone">Contact: {{ date.phone }}</div>
-            <div class="entry" id="website">Website: {{ date.website }}</div>
-            <div class="entry" id="price">Price: {{ date.price }}</div>
-            <div class="entry" id="parking">Parking options: {{ date.parking }}</div>
-        </div>
-        <div class="entry" id="user">Author: {{ date.user }}</div>
+        {{#dates}}
 
-    <br>
-    <a id="home" href="/dates"> Back Home </a>
+        <h2>Details: {{place}}</h2>
 
-    <div id="search2"><a href="/dates/area"> Search by Area </a></div>
+            <div class="details"> 
+                <div class="entry" id="address">Address: <br> {{address}}</div>
+                <div class="entry" id="area">Area: {{area}}</div>
+                <br><br>
+                <div class="entry" id="notes">Notes: <br> {{notes}}</div>
+                <br>
+                <div class="entry" id="phone">Contact: {{phone}}</div>
+                <div class="entry" id="website">Website: {{website}}</div>
+                <div class="entry" id="price">Price: {{price}}</div>
+                <div class="entry" id="parking">Parking options: {{parking}}</div>
+            </div>
+            <div class="entry" id="user">Author: {{user}}</div>
 
-    <div id="search2"><a href="/dates/search"> Search by Catergory</a></div>
-    <br><br>
+    {{/dates}}
 
 	</script>
 

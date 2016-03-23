@@ -97,7 +97,7 @@ class Dates(models.Model):
             "count": self.count,
             "slug": self.slug,
             "show": self.show,
-            "user": self.user.id,
+            "user": self.user,
         }
 
 
