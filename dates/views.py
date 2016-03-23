@@ -26,23 +26,6 @@ class Index(View):
             context = {
                 'message': message,}
 
-        # # if we just want an ajax request we dont need a seperate class 
-        # if request.is_ajax():
-        #     pk=request.GET.get("post_id")
-        #     # do all the logic and filtering here, only get the comments that are shown and have the right id 
-        #     comments = Comment.objects.filter(post_id=pk,show=True).order_by('-created_at')
-        #     # put all the values into a json dictionary with a method called from the models
-        #     comments = [comment.to_json() for comment in comments]
-        #     # put all the commentss into a context dict
-        #     data = {
-        #         "comments": comments }
-        #     return JsonResponse(data) # return a json object to the ajax request
-
-        # # this line gets all the posts that we have in the db and orders them by most recent
-        # posts = Post.objects.filter(show=True).order_by('-updated_at')
-        # # put all the posts into a context dict
-        # context ["posts"] = posts
-
         # send them all to the template
         return render(request, "dates/index.html", context)
 
@@ -232,12 +215,17 @@ class SearchDate_Price(View):
 
 class DateDetails(View):
     def get(self, request, dates_slug=None):
-        # this returns a list of all the date ideas returned from the db 
-        date = Dates.objects.get(slug=dates_slug) 
-        print (date)
-        context = {
-            'date': date,}
-        return render(request, "dates/details.html", context)
+        # if we just want an ajax request we dont need a seperate class 
+        if request.is_ajax():
+            pk=request.GET.get("date_id")
+            # do all the logic and filtering here, only get the comments that are shown and have the right id 
+            dates = Dates.objects.filter(id=pk,show=True)
+            # put all the values into a json dictionary with a method called from the models
+            dates = [date.to_json() for date in dates]
+            # put all the commentss into a context dict
+            data = {
+                "dates": dates }
+            return JsonResponse(data) # return a json object to the ajax request
 
 
 class Edit_Date(View):

@@ -1,0 +1,24 @@
+{% verbatim %}
+	
+	<script id="details" type="x-tmpl-mustache">
+
+        {{#dates}}
+
+            <div class="details"> 
+                <div class="entry" id="place"> {{place}}</div>
+                <div class="entry" id="address">Address: <br> {{address}}</div>
+                <br>
+                <div class="entry" id="notes">Notes: <br> {{notes}}</div>
+                <div class="entry" id="phone">Contact: {{phone}}</div>
+                <div class="entry" id="website">Website: {{website}}</div>
+                <div class="entry" id="price">Price: {{price}}</div>
+                <br>
+                <div class="entry" id="parking">Parking options: {{parking}}</div>
+                <br><br>
+            </div>
+
+    {{/dates}}
+
+	</script>
+
+{% endverbatim %}
