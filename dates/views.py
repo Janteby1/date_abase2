@@ -225,16 +225,7 @@ class DateDetails(View):
             # put all the commentss into a context dict
             data = {
                 "dates": dates }
-            print (data)
             return JsonResponse(data) # return a json object to the ajax request
-
-    # def get(self, request, dates_slug=None):
-    #     # this returns a list of all the date ideas returned from the db 
-    #     date = Dates.objects.get(slug=dates_slug) 
-    #     print (date)
-    #     context = {
-    #         'date': date,}
-    #     return render(request, "dates/details.html", context)
 
 
 class Edit_Date(View):

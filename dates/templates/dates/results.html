@@ -8,24 +8,22 @@
         {% for date in dates %}
             {% if date.show %}
             <div class="result"> 
-                <div class="entry" id="link"> <a href="/dates/details/{{ date.slug }}"> <div> {{ date.place }} 
+                <div class="entry" id="link"> <a href="/dates/edit/{{ date.slug }}"> <div> {{ date.place }} 
                     </div></a></div>
 
                 <div class="entry" id="area">Area: {{ date.area }}</div>
                 <div class="entry" id="website">Contact: {{ date.phone }}</div>
 
-                <div class="entry"> <a id="detail" href="/dates/edit/{{ date.slug }}"> Edit Date 
-                    </a></div>
             </div> 
 
             <div class="entry" id="user">Author: {{ date.user }}</div>
 
                 <form action="" class='details_button'>
                     <input type="hidden" name= "date_id"value="{{date.id}}">
-                    <input class="button" id="details_button" type="submit" name='get_details' value= "Get Details">
+                    <input class="details_btn btn btn-primary" id="details_button" type="submit" name='get_details' value= "Get Details">
                 </form>
 
-                <div class="details_div" id= "{{date.id}}">
+                <div class="details_div" id= "{{date.slug}}">
                     <!-- this is where everything from mustache will render -->
                 </div>
 
@@ -33,14 +31,14 @@
             {% endif %}
             {% endfor %}
             <br><br>
-            <div class="entry" id="user">End of Seach Results </div>
+            <div class="entry"><p id="end">End of Seach Results</p> </div>
 
     {% else %}
         <p>No Results to your search, try again.</p>
     {% endif %}
 
     {%include 'dates/detail_ajax.html' %}
-    
+
 
     <br>
     <a id="home" href="/dates"> Back Home </a>
