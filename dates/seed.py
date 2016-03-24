@@ -1,7 +1,7 @@
 import csv 
 from dates.models import Dates 
 
-with open("dates/seed_file.txt", encoding='latin-1') as f:
+with open("dates/Updated_Seed.txt", encoding='latin-1') as f:
     reader = csv.reader(f, delimiter="\t")
     # header = reader.next()
     for row in reader:

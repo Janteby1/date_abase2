@@ -8,12 +8,14 @@ Fix "hello x" logged in message - Done
 Create drop down search by menu - Done (added bootstrap)
 Add edit and delete date idea (with contraints) - Done
 Add detail view - Done
+Add search by price - Done
+Add Ajax details button - Done
 
-Add search by price, ...?
 Add top date lists to index page based on detail view / voting ?
 Populate and add 150 date ideas
+Fix back button after edit  
 
+Add map
 Pop up login
-Ajax ?
 Search by tags
 
