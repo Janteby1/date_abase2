@@ -7,7 +7,7 @@ body {
 }
 
 .landing { 
-	background: url("https://newevolutiondesigns.com/images/freebies/urban-landscape-wallpaper-preview-25.jpg") no-repeat;
+	background: url("https://assets3.thrillist.com/v1/image/1325912/size/tl-horizontal_main/42-actually-great-new-york-date-ideas") no-repeat;
 	margin-left: -35px;
 	background-size: cover; 
 	color: white;
@@ -32,6 +32,12 @@ body {
 }
 
 #welcome {
+	font-weight: bold;
+	color: black;
+	text-align: center;
+}
+
+#welcome2 {
 	font-weight: bold;
 	color: white;
 	text-align: center;
