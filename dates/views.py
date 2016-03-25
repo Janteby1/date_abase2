@@ -206,7 +206,8 @@ class SearchDate_Price(View):
             # this returns a list of all the date ideas returned from the db 
             dates = Dates.objects.filter(price__in=codes)
             context = {
-                'dates': dates,}
+                'dates': dates,
+            }
             return render(request, "dates/results.html", context)
 
         else:

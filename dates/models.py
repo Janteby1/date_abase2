@@ -67,7 +67,7 @@ class Dates(models.Model):
     created_at = models.DateTimeField(default = timezone.now, editable=False)
     updated_at = models.DateTimeField()
     count = models.IntegerField(default = 0)
-    user = models.ForeignKey(User, null = True, default = None)
+    user = models.ForeignKey(User, null = True, default = 1)
     slug = models.SlugField(max_length=40)
     show = models.BooleanField(default=True)
 
