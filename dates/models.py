@@ -56,7 +56,7 @@ class Dates(models.Model):
     category = models.CharField (max_length=80, choices=CATEGORIES)
     address = models.CharField (max_length=150)
     area = models.CharField (max_length=30)
-    state = models.CharField (max_length=5)
+    state = models.CharField (max_length=5) 
     phone = models.CharField (max_length=20, null = True, default = None,)
     notes = models.TextField (max_length=500, null = True, default = None,)
     website = models.URLField(max_length=120, null = True, default = None,) 
