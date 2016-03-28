@@ -4,7 +4,7 @@ function init_map(map_date, latitude, longitude) {
  
     var var_mapoptions = {
         center: var_location,
-        zoom: 16
+        zoom: 17
     };
  
     var var_marker = new google.maps.Marker({
@@ -15,6 +15,16 @@ function init_map(map_date, latitude, longitude) {
         var_mapoptions);
     // the zero will get the element the jquery object is wrapping
  
+    // var panorama = new google.maps.StreetViewPanorama(
+    //     view_date_div.get(0), {
+    //     position: var_location,
+    //     pov: {
+    //       heading: 34,
+    //       pitch: 10
+    //     }
+    //   });
+    // var_map.setStreetView(panorama);
+
     var_marker.setMap(var_map); 
 };
 
@@ -61,7 +71,7 @@ $(document).ready(function(){
         event.preventDefault();
         var date_id = ($(this).find("[name='date_id']").attr("value")); // find tells it where in the this object to look for the value
         var map_date = $("#" + date_id) // targets the right div in the DOM that has the same post id as ou post FK
-        
+        console.log(map_date)
 
         var geocoder = new google.maps.Geocoder();
         var address = ($(this).find("[name='address']").attr("value")); // get the address from the DOM of the buttom you clicked
