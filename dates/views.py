@@ -32,7 +32,7 @@ class Index(View):
 class About(View):
     def get(self, request):
         return render(request, "dates/about.html")
-
+        
 
 class User_Register(View):
     # pu.db

@@ -194,6 +194,11 @@ a:hover {
 	margin-right: 1em;
 }
 
+.map_btn{
+	float: right;
+	margin-right: 1em;
+}
+
 #end {
 	text-align: center;
 	font-style: italic;
