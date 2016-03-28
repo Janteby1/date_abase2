@@ -43,7 +43,7 @@ $(document).ready(function(){
         data: data, //only sends the id so we can do the logic and sorting of db in our view
         success: function(data){
         	console.log("here"); //for testing 
-            console.log(data["dates"][0]["notes"])
+            // console.log(data["dates"][0]["notes"])
 
 // This will target the element with an id of list in the mustache file
 // We use Mustache's "render" function to take the targeted template and load it with the data we got back earlier
