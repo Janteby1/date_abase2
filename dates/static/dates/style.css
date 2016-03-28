@@ -205,4 +205,8 @@ a:hover {
 	font-weight: bold;
 }
 
+.map_div {
+	width: 60%;
+	margin-left: 2em;
+}
 
