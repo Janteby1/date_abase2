@@ -10,10 +10,11 @@ Add edit and delete date idea (with contraints) - Done
 Add detail view - Done
 Add search by price - Done
 Add Ajax details button - Done
+Populate and add 150 date ideas, remove duplicates - Done
 
 Add top date lists to index page based on detail view / voting ?
-Populate and add 150 date ideas
 Fix back button after edit  
+Fix db queries (use pks and not slugs)
 
 Add map
 Pop up login

@@ -11,21 +11,38 @@
                 <div class="entry" id="link"> <a href="/dates/edit/{{ date.slug }}"> <div> {{ date.place }} 
                     </div></a></div>
 
-                <div class="entry" id="area">Area: {{ date.area }}</div>
+                <div class="entry" id="area">{{ date.address }}</div>
                 <div class="entry" id="website">Contact: {{ date.phone }}</div>
 
             </div> 
 
             <div class="entry" id="user">Author: {{ date.user }}</div>
 
+
+
+
                 <form action="" class='details_button'>
                     <input type="hidden" name= "date_id"value="{{date.id}}">
                     <input class="details_btn btn btn-primary" id="details_button" type="submit" name='get_details' value= "Get Details">
                 </form>
 
+                <form action="" class='map_button'>
+                    <input type="hidden" name= "date_id" value="{{date.id}}">
+                    <input type="hidden" name= "address" value="{{ date.address }}">
+                    <input class="map_btn btn btn-primary" id="map_button" type="submit" name='get_map' value= "Show Map">
+                </form>
+
+
                 <div class="details_div" id= "{{date.slug}}">
                     <!-- this is where everything from mustache will render -->
                 </div>
+
+                <br>
+                <div class="map_div" id= "{{date.id}}">
+                    <!-- this is where everything from mustache will render -->
+                </div>
+
+
 
 
             {% endif %}
@@ -38,6 +55,7 @@
     {% endif %}
 
     {%include 'dates/detail_ajax.html' %}
+
 
 
     <br>
@@ -53,3 +71,5 @@
     <div id="dates_slug">{{ date.slug }} </div> 
 
 {% endblock content %}
+
+
