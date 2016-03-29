@@ -11,12 +11,12 @@ Add detail view - Done
 Add search by price - Done
 Add Ajax details button - Done
 Populate and add 150 date ideas, remove duplicates - Done
+Add map - Done
 
-Add top date lists to index page based on detail view / voting ?
 Fix back button after edit  
+Add top date lists to index page based on ... ? (details button ?)
 Fix db queries (use pks and not slugs)
 
-Add map
 Pop up login
 Search by tags
 
