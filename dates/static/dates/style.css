@@ -90,9 +90,8 @@ a:hover {
 }
 
 .form {
-	margin-right: 12em;
+	margin-right: 10em;
 	margin-left: 2em;
-	font-style: 
 }
 
 .entry {
@@ -216,4 +215,14 @@ a:hover {
 	width: 60%;
 	margin-left: 2em;
 }
+
+@media (min-width: 500px) {
+	.form {
+		margin-right: 10em;
+	}
+	#about {
+		margin: 0em;
+	}
+}
+
 
