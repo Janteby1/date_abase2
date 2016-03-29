@@ -86,6 +86,7 @@ $(document).ready(function(){
                 } 
 
             map_date.css({"height":"250px"});
+            map_date.css({"margin-bottom":"1.5em"});
          
             init_map(map_date, latitude, longitude);
 
