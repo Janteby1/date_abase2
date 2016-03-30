@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^results$', views.SearchDate.as_view(), name='results'),
     url(r'^details/(?P<dates_slug>[A-Za-z0-9\-\_]+)$', views.DateDetails.as_view(), name='details'),
     url(r'^price$', views.SearchDate_Price.as_view(), name='search_price'),
+    url(r'^top/(?P<dates_slug>[A-Za-z0-9\-\_]+)$', views.TopDate.as_view(), name='top'),
 ]

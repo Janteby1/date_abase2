@@ -4,16 +4,19 @@
 
 	<div class ="landing">
     <h2 id="welcome">Welcome to the Date Idea Website!</h2>
+    <br><br>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    {% for date in dates %}
+        {% if date.show %}
+        <div class="index_result"> 
+            <div class="entry" id="place"> <a href="/top/{{ date.slug }}"> <div> {{ date.place }} </div></a></div>
 
-        <h2 id="welcome2"><em>Most populare date ideas - Coming Soon!</em></h2>
+            <div class="entry" id="area">{{ date.area }}</div>
+            <div class="entry" id="user">Author: {{ date.user }}</div>
+        </div> 
 
-<!-- 	<div class="row">
-	    <div id="explore" class= "small-4 small-offset-4 columns"><a class="expanded button" href="/dates"> Explore!</a></div>
-	</div>
- -->
-
+        {% endif %}
+        {% endfor %}
 	</div>
 
 {% endblock content %}

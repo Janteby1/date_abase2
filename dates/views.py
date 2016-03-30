@@ -25,8 +25,14 @@ class Index(View):
             context = {
                 'message': message,}
 
+        # this line gets all the posts that we have in the db and orders them by most recent
+        dates = Dates.objects.filter(show=True).order_by('-count')[:10]
+        # put all the dates into a context dict
+        context ["dates"] = dates
+
         # send them all to the template
         return render(request, "dates/index.html", context)
+
 
 class About(View):
     def get(self, request):
@@ -123,7 +129,7 @@ class AddDate(View):
             date = form.save(commit=False)
             date.user = user
             date.save()
-            return redirect("/dates")
+            return redirect("/")
 
         else:
             context = {
@@ -220,6 +226,14 @@ class DateDetails(View):
             pk=request.GET.get("date_id")
             # do all the logic and filtering here, only get the comments that are shown and have the right id 
             dates = Dates.objects.filter(id=pk,show=True)
+
+            # you need to save the value bc .filter is only a query set, not a bunch of objects
+            date = dates[0]
+            # this adds one to the count every time someone views the details to keep track of the "top dates"
+            date.count += 1
+            date.save()
+            print (date.count) 
+
             # put all the values into a json dictionary with a method called from the models
             dates = [date.to_json() for date in dates]
             # put all the commentss into a context dict
@@ -253,7 +267,7 @@ class Edit_Date(View):
 
         if form.is_valid():
             form.save()
-            return redirect("/dates")
+            return redirect("/")
         else:
             context = {
                 "date": date,
@@ -270,7 +284,16 @@ class Delete_Date(View):
         # dont earase it just make the show field false so it wont show on index page
         date.show = False
         date.save()
-        return redirect("/dates/login")
+        return redirect("/login")
 
+
+class TopDate(View):
+    # just want to send them to the results page with the one date they clicked as the context
+    # dont need a get just get the slug id and change the value for show
+    def get(self, request, dates_slug=None):
+        date = Dates.objects.filter(slug=dates_slug)
+        context = {
+        'dates': date,}
+        return render(request, "dates/results.html", context)
 
 
