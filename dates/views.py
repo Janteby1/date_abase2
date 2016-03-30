@@ -11,7 +11,6 @@ from .forms import AddDateForm, SearchDateForm, UserForm, SearchDateForm_Area, S
 from .models import UserProfile, Dates 
 
 
-
 # Create your views here.
 class Index(View):
     def get(self, request):

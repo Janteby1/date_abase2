@@ -15,16 +15,6 @@ function init_map(map_date, latitude, longitude) {
         var_mapoptions);
     // the zero will get the element the jquery object is wrapping
  
-    // var panorama = new google.maps.StreetViewPanorama(
-    //     view_date_div.get(0), {
-    //     position: var_location,
-    //     pov: {
-    //       heading: 34,
-    //       pitch: 10
-    //     }
-    //   });
-    // var_map.setStreetView(panorama);
-
     var_marker.setMap(var_map); 
 };
 
@@ -39,7 +29,7 @@ $(document).ready(function(){
 
 	$.ajax({
         method: "GET",
-        url: ("/dates/details/" + $('#date_slug').html()), //just goest to url  
+        url: ("/details/" + $('#date_slug').html()), //just goest to url  
         data: data, //only sends the id so we can do the logic and sorting of db in our view
         success: function(data){
         	console.log("here"); //for testing 

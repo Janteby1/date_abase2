@@ -8,7 +8,7 @@
         {% for date in dates %}
             {% if date.show %}
             <div class="result"> 
-                <div class="entry" id="link"> <a href="/dates/edit/{{ date.slug }}"> <div> {{ date.place }} 
+                <div class="entry" id="link"> <a href="/edit/{{ date.slug }}"> <div> {{ date.place }} 
                     </div></a></div>
 
                 <div class="entry" id="area">{{ date.address }}</div>
@@ -57,13 +57,13 @@
 
 
     <br>
-    <a id="home" href="/dates"> Back Home </a>
+    <a id="home" href="/"> Back Home </a>
 
-    <div id="search2"><a href="/dates/area"> Search by Area </a></div>
+    <div id="search2"><a href="/area"> Search by Area </a></div>
 
-    <div id="search2"><a href="/dates/search"> Search by Catergory</a></div>
+    <div id="search2"><a href="/search"> Search by Catergory</a></div>
 
-    <div id="search2"><a href="/dates/price"> Search by Price</a></div>
+    <div id="search2"><a href="/price"> Search by Price</a></div>
     <br><br>
 
     <div id="dates_slug">{{ date.slug }} </div> 

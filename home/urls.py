@@ -15,13 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.views.generic import TemplateView
-
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^dates/', include("dates.urls", namespace="dates")),
-    # this is a new syntax to take us directly to a template and not a view (use a global template folder)
-    url(r'^$', TemplateView.as_view(template_name="landing.html"),name="landing"),
-
+    url(r'^', include("dates.urls", namespace="dates")),
 ]
