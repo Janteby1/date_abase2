@@ -243,6 +243,15 @@ a:hover {
 	box-shadow: 0 0 20px black; 
 }
 
+@media only screen and (max-width : 480px) {
+.index_result {
+	padding: 3px;
+	border-radius: 10px;
+	margin-right: 1em;
+	margin-left: 2em;
+	}
+}
+
 .scrolling {
 	z-index: 1;
 	height:80vh;
