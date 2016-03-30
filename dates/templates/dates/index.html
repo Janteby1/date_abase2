@@ -3,20 +3,24 @@
 {% block content %}
 
 	<div class ="landing">
-    <h2 id="welcome">Welcome to the Date Idea Website!</h2>
-    <br><br>
+	    <h2 id="welcome">Welcome to the Date Idea Website!</h2>
+	    <br>
+		
+		<div class ="scrolling">
+			<br>
+	    {% for date in dates %}
+	        {% if date.show %}
+	        <div class="index_result"> 
+	            <div class="entry" id="place"> <a href="/top/{{ date.slug }}"> <div> {{ date.place }} </div></a></div>
 
-    {% for date in dates %}
-        {% if date.show %}
-        <div class="index_result"> 
-            <div class="entry" id="place"> <a href="/top/{{ date.slug }}"> <div> {{ date.place }} </div></a></div>
+	            <div class="entry" id="area">{{ date.area }}</div>
+	            <div class="entry" id="user">Author: {{ date.user }}</div>
+	        </div> 
 
-            <div class="entry" id="area">{{ date.area }}</div>
-            <div class="entry" id="user">Author: {{ date.user }}</div>
-        </div> 
-
-        {% endif %}
-        {% endfor %}
+	        {% endif %}
+	        {% endfor %}
+	        </div>
+	    </div>
 	</div>
 
 {% endblock content %}

@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-	margin-left: 25px;
+	margin-left: 20px;
 }
 
 .landing { 
@@ -11,7 +11,7 @@ body {
 	margin-left: -35px;
 	background-size: cover; 
 	color: white;
-	height:700px;
+	height:90vh;
 	padding-top: 10px;
 }
 
@@ -237,9 +237,16 @@ a:hover {
 	padding-bottom: 15px;
 	color:#337ab7;
 	opacity: 0.8;
+	position: relative; 
+	-moz-box-shadow: 0 0 20px black; 
+	-webkit-box-shadow: 0 0 20px black; 
+	box-shadow: 0 0 20px black; 
 }
 
-
-
+.scrolling {
+	z-index: 1;
+	height:80vh;
+	overflow: scroll;
+}
 
 
