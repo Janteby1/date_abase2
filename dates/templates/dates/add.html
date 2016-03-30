@@ -6,7 +6,7 @@
 <h2 id="add_title">Add a Date Idea!</h2>
 
     <form class = "form" role="form" action="{% url 'dates:add' %}" method="POST">
-    	<h5><em><strong>Note: </strong> Must be signed in to submit an idea</em></h5>
+    	<h5><em><strong>Note: </strong> Must be signed in to submit an idea to the Date-abase</em></h5>
         <fieldset class="form-group">
         {% csrf_token %}
         

@@ -12,11 +12,21 @@ Add search by price - Done
 Add Ajax details button - Done
 Populate and add 150 date ideas, remove duplicates - Done
 Add map - Done
+Redirect the landing page - Done
+Jack A Anteby copyright - Done
+Data-abase needs to be consistent - Done
 
 Fix back button after edit  
 Add top date lists to index page based on ... ? (details button ?)
 Fix db queries (use pks and not slugs)
+From a marketing standpoint I have a couple minor edits about font, centering, picture etc  
+
 
 Pop up login
 Search by tags
+getting the google sheets integration in place
+
+Emails - http://www.mailgun.com/?utm_source=carbonads&utm_medium=banner&utm_campaign=signup
+we can also utilize this for free if we send under 10,000 emails a month if we incorporated sending emails 
+
 
