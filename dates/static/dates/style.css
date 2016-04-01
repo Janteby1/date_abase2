@@ -10,6 +10,7 @@ body {
 	background: url("https://assets3.thrillist.com/v1/image/1325912/size/tl-horizontal_main/42-actually-great-new-york-date-ideas") no-repeat ;
 	margin-left: -35px;
 	background-size: cover; 
+	background-position: center;
 	color: white;
 	height:90vh;
 	padding-top: 10px;
@@ -38,9 +39,18 @@ body {
 
 #welcome {
 	font-weight: bold;
-	color: black;
+	color:#337ab7;
 	text-align: center;
-}
+
+	text-shadow: 2.5px 1px black;
+	
+/*	background-color:#F1F1F1; 
+	opacity: 0.5;
+	margin-left: 12em;
+	margin-right: 12em;
+	border-radius: 5px;
+	padding: .1em;
+*/}
 
 #welcome2 {
 	font-weight: bold;
@@ -228,22 +238,22 @@ a:hover {
 }
 
 .index_result {
-	background-color: #F1F1F1;;
+	background-color: #F1F1F1;
 	padding: 5px;
-	border-radius: 15px;
+	border-radius: 5px;
 	margin-right: 8em;
 	margin-left: 8em;
 	margin-bottom: 2em;
 	padding-bottom: 15px;
 	color:#337ab7;
-	opacity: 0.8;
+	opacity: 0.75;
 	position: relative; 
 	-moz-box-shadow: 0 0 20px black; 
 	-webkit-box-shadow: 0 0 20px black; 
 	box-shadow: 0 0 20px black; 
 }
 
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 495px) {
 .index_result {
 	padding: 3px;
 	border-radius: 10px;

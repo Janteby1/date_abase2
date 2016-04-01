@@ -18,6 +18,9 @@ Data-abase needs to be consistent - Done
 Fix back button after edit - Done ?!
 Add top date lists to index page based on details button (add scroll) - DONE
 
+add the title background light detector 
+add forgot passsword in login  
+add acount details page - see recent posts you made, change password
 Fix db queries (use pks and not slugs)
 From a marketing standpoint I have a couple minor edits about font, centering, picture etc  
 

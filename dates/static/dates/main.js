@@ -35,6 +35,11 @@ $(document).ready(function(){
         	console.log("here"); //for testing 
             // console.log(data["dates"][0]["notes"])
 
+        // use instead of success
+        // .done(function(data, status)){
+        //     console.log("here");//for testing 
+        // }
+
 // This will target the element with an id of list in the mustache file
 // We use Mustache's "render" function to take the targeted template and load it with the data we got back earlier
 // Use jQuery to target the div with the id of our postFK that we renamed to post 
