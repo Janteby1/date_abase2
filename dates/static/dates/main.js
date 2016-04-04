@@ -22,6 +22,17 @@ function init_map(map_date, latitude, longitude) {
 $(document).ready(function(){
   console.log("Hi there!")
 
+    // this checks the background light to change the color of the title
+    BackgroundCheck.init({
+        targets: '#welcome',
+        images: '.landing'
+    });
+
+    BackgroundCheck.refresh();
+
+    BackgroundCheck.get('targets');
+
+
     $('.details_button').on('submit', function(event){
 	event.preventDefault();
 
