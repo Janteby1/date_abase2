@@ -281,6 +281,7 @@ a:hover {
 	z-index: 1;
 	height:80vh;
 	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 
 
