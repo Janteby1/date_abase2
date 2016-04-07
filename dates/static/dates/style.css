@@ -16,13 +16,8 @@ body {
 	padding-top: 10px;
 }
 
-.navbar-default {
-	margin-left: -2em;
-	background-image:linear-gradient(to bottom,#fff 0,#CCC 100%);
-}
-
-.navbar-default .navbar-nav>li>a {
-	color: #337ab7;
+nav {
+	margin-left: -1em;
 }
 
 #input {
@@ -73,11 +68,34 @@ body {
 
 #add_title {
 	font-style: italic;
+	color: #337ab7 ;
+}
+
+.brand-logo {
+	color:#337ab7 !important;
+}
+
+.index_card_content {
+	padding: 0em !important;
+}
+
+.index_card {
+	padding: 5px;
+	margin-right: 7em;
+	margin-left: 7em;
+	margin-bottom: 1em;
+	padding-bottom: 15px;
+	opacity: 0.9;
+	position: relative; 
+	-moz-box-shadow: 0 0 20px black; 
+	-webkit-box-shadow: 0 0 20px black; 
+	box-shadow: 0 0 20px black; 
+
 }
 
 a:hover {
-	color: red;
-}
+/*	color: red;
+*/}
 
 #search2 {
 	display: inline-block;
@@ -85,11 +103,13 @@ a:hover {
 }
 
 .result {
-	background-color: #F1F1F1;;
 	padding: 5px;
 	border-radius: 15px;
-	margin-right: 15px;
 	padding-bottom: 15px;
+}
+
+.row {
+	margin-bottom: 2px !important;
 }
 
 .details_div {
@@ -259,7 +279,7 @@ a:hover {
 }
 
 @media only screen and (max-width : 495px) {
-.index_result {
+.card {
 	padding: 3px;
 	border-radius: 10px;
 	margin-right: 1em;

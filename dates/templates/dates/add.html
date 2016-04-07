@@ -3,10 +3,10 @@
 
 {% block content %}
 
-<h2 id="add_title">Add a Date Idea!</h2>
+<h4 id="add_title">Add a Date Idea!</h4>
 
     <form class = "form" role="form" action="{% url 'dates:add' %}" method="POST">
-    	<h5><em><strong>Note: </strong> Must be signed in to submit an idea to the Date-abase</em></h5>
+    	<h6><em><strong>Note: </strong> Must be signed in to submit an idea to the Date-abase</em></h6>
         <fieldset class="form-group">
         {% csrf_token %}
         

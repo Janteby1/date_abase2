@@ -2,36 +2,46 @@
 
 {% block content %}
     
-    <h2>Date-abase Search Results:</h2>
+    <h3>Date-abase Search Results:</h3>
     {% if dates %}
 
         {% for date in dates %}
             {% if date.show %}
-            <div class="result"> 
-                <div class="entry" id="link"> <a href="/edit/{{ date.slug }}"> <div> {{ date.place }} 
-                    </div></a></div>
+                <div class="row">
+                    <div class="col s12 m11 l11">
+                      <div class="card grey lighten-1">
+                        <div class="card-content white-text result">
+                            <span class="card-title">                
+                                <div class="entry" id="link"> <a href="/edit/{{ date.slug }}"> <div> {{ date.place }}</div></a></div>
+                            </span>
 
                 <div class="entry" id="area">{{ date.address }}</div>
                 <div class="entry" id="website">Contact: {{ date.phone }}</div>
 
-            </div> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="entry" id="user">Author: {{ date.user }}</div>
-
-
-
-
-                <form action="" class='details_button'>
+            <div class="row">
+                <div class="col s1">
+                    <form action="" class='details_button'>
                     <input type="hidden" name= "date_id"value="{{date.id}}">
-                    <input class="details_btn btn btn-primary" id="details_button" type="submit" name='get_details' value= "Get Details">
-                </form>
+                    <button class="btn-floating btn-large waves-effect waves-light red" id="details_button" type="submit" name="get_details" value= "Get Details"><i class="material-icons">toc</i></button>
+                    </form>
+                </div>
 
-                <form action="" class='map_button'>
+
+
+                <div class="col s1">
+                    <form action="" class='map_button'>
                     <input type="hidden" name= "date_id" value="{{date.id}}">
                     <input type="hidden" name= "address" value="{{ date.address }}">
-                    <input class="map_btn btn btn-primary" id="map_button" type="submit" name='get_map' value= "Show Map">
-                </form>
 
+                    <button class="btn-floating btn-large waves-effect waves-light red" id="map_button" type="submit" name="get_map" value= "Get Details"><i class="material-icons">location_on</i></button>
+                    </form>
+                </div>
+            </div>
 
                 <div class="details_div" id= "{{date.slug}}">
                     <!-- this is where everything from mustache will render -->
